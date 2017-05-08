@@ -1,0 +1,3 @@
+[submodule "submodules/react-native"]
+	path = submodules/react-native
+	url = https://github.com/facebook/react-native
