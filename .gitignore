@@ -4,3 +4,5 @@ node_mdules
 node_modules
 gatsby/public/
 public/
+
+*.lock

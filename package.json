@@ -16,6 +16,6 @@
   "devDependencies": {
     "concurrently": "^3.3.0",
     "documentation": "^4.0.0-rc.1",
-    "fs-extra": "^2.0.0",
+    "fs-extra": "^2.0.0"
   }
 }
