@@ -62,12 +62,17 @@ const generateYamlDataFileForNavigationFromFrontmatter = (yamlFilesPath) => {
 const addMarkdownFrontmatter = (md, frontOptions) => {
   frontOptions.unshift('---')
   frontOptions.push('---', md)
-  return frontOptions.filter(function(line) { return line; }).join('\n');
+  return frontOptions.filter(function(line) { 
+    return line
+  }).join('\n');
 }
 
 const generateMarkdownFromJsdoc = (pathToFile, title, category) => {
   return documentation.build(pathToFile, {}).then((doc) => {
-    return documentation.formats.md(doc, {});
+    const docWithNoBlanks = doc.filter(commentBlock => {
+      return commentBlock.namespace && commentBlock.name
+    })
+    return documentation.formats.md(docWithNoBlanks, {});
   }).then((md) => {
     return addMarkdownFrontmatter(md, [`title: ${title}`, `category: ${category}`])
   })

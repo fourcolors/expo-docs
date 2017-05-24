@@ -24,6 +24,7 @@ import '../css/prism-coy.css';
 import 'typeface-source-sans-pro';
 import 'typeface-source-code-pro';
 
+import rn_latest from '../data/rd_latest.yaml';
 import unversioned from '../data/unversioned.yaml';
 import v17 from '../data/v17.yaml';
 import v16 from '../data/v16.yaml';
@@ -83,7 +84,7 @@ class Wrapper extends React.Component {
     let routes;
     switch (version) {
       case 'unversioned':
-        routes = unversioned;
+        routes = unversioned.concat(rn_latest);
         break;
       case 'v17.0.0':
         routes = v17;
